@@ -1,12 +1,10 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {userData} from "./Data"
 import UserCard from './UserCard';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function App() {
-  console.log(userData);
   const [Data, setData] = useState([])
   const [error, setError] = useState([null])
   useEffect(() => {
@@ -42,7 +40,7 @@ function App() {
     <div className="App">
       <h1>Workshop API</h1>
       <div className='usercard'>
-        {userData.map(user => {
+        {Data.map(user => {
           return <UserCard key={user.id} user={user} />
         })}
       </div>
